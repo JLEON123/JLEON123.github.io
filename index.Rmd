@@ -1,0 +1,17 @@
+---
+output: html_document
+pagetitle: Josh Leon
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+```
+
+Here's my website
+
+```{r, echo=FALSE,fig.align='center',fig.width=.1, fig.height=.1}
+knitr::include_graphics('./media/headshot.JPG')
+```
+
