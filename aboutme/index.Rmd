@@ -1,0 +1,45 @@
+---
+output: html_document
+pagetitle: Josh Leon - About Me
+---
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+div.grey { text-align:center; background-color:#333333; border-radius: 20px; padding: 20px;}
+</style>
+<div class = "grey">
+
+# [Home](http://JLEON123.github.io) | [About Me](https://JLEON123.github.io/aboutme) | [Portfolio](http://JLEON123.github.io/portfolio/) | [CV](https://JLEON123.github.io/aboutme/Josh_Leon_CV.pdf)
+
+</div>
+
+<br>
+
+<style>
+div.brownone { color:#ffffff; text-align:center; background-color:#a89d82; border-radius: 20px; padding: 20px;}
+</style>
+<div class = "brownone">
+# Josh Leon
+
+___
+
+</div>
+
+<style>
+div.brown { color:#ffffff; text-align:left; background-color:#a89d82; border-radius: 20px; padding: 20px;}
+</style>
+<div class = "brown">
+
+### I am an undergraduate student 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
