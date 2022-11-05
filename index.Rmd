@@ -3,15 +3,60 @@ output: html_document
 pagetitle: Josh Leon
 ---
 
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+div.brown { background-color:#a89d82; border-radius: 20px; padding: 20px;}
+</style>
+<div class = "brown">
+
+<style>
+div.grey { text-align:center; background-color:#333333; border-radius: 20px; padding: 20px;}
+</style>
+<div class = "grey">
+
+# [Home](http://jleon123.github.io/index.html) | [About Me](https://JLEON123.github.io/aboutme) | [Portfolio](http://JLEON123.github.io/portfolio) | [CV](https://JLEON123.github.io/aboutme/CV.pdf)
+
+<div style= "float:right;position: relative;top:60px">
+```{r, echo=FALSE}
+knitr::include_graphics('./media/small_headshot.JPG')
+```
+
+<br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+</div>
+
+___
+
+<br>
+
+<style>
+div.white { color:#000000; text-align:left; background-color:#ffffff; border-radius: 15px; padding: 20px;}
+</style>
+<div class = "white">
+
+## **Contact Info:**
+
+### Josh Leon<br>
+### Email: Joshuarleon0123@gmail.com<br>
+### Phone: (385)-447-7934
+<br><br><br>
+
+</div>
+
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 library(tidyverse)
 ```
 
-Here's my website
-
-```{r, echo=FALSE,fig.align='center',fig.width=.1, fig.height=.1}
-knitr::include_graphics('./media/headshot.JPG')
-```
 
