@@ -1,0 +1,50 @@
+---
+output: html_document
+pagetitle: Josh Leon - Portfolio
+---
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+div.grey { text-align:center; background-color:#333333; border-radius: 20px; padding: 20px;}
+</style>
+<div class = "grey">
+
+# [Home](http://JLEON123.github.io) | [About Me](https://JLEON123.github.io/aboutme/index.html) | [Portfolio](http://JLEON123.github.io/portfolio/index.html) | [CV](https://JLEON123.github.io/aboutme/Josh_Leon_CV.pdf)
+
+</div>
+
+<br>
+
+<style>
+div.brownone { color:#ffffff; text-align:center; background-color:#a89d82; border-radius: 20px; padding: 20px;}
+</style>
+<div class = "brownone">
+
+## These are the links to the some of my work
+
+___
+
+</div>
+
+<style>
+div.brown { color:#ffffff; text-align:left; background-color:#a89d82; border-radius: 20px; padding: 20px;}
+</style>
+<div class = "brown">
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE,out.height='10%', out.width='20%'}
+knitr::include_graphics('../media/UVUSquareBlack-0002.png')
+``` 
+
+
+## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BIOL 3100 Final](http://JLEON123.github.io/portfolio/finalproject/index.html)
