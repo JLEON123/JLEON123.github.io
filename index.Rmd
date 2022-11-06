@@ -21,7 +21,7 @@ div.grey { text-align:center; background-color:#333333; border-radius: 20px; pad
 </style>
 <div class = "grey">
 
-# [Home](http://jleon123.github.io/index.html) | [About Me](https://JLEON123.github.io/aboutme) | [Portfolio](http://JLEON123.github.io/portfolio) | [CV](https://JLEON123.github.io/aboutme/CV.pdf)
+# [Home](http://JLEON123.github.io) | [About Me](https://JLEON123.github.io/aboutme) | [Portfolio](http://JLEON123.github.io/portfolio/) | [CV](https://JLEON123.github.io/aboutme/CV.pdf/)
 
 <div style= "float:right;position: relative;top:60px">
 ```{r, echo=FALSE}
