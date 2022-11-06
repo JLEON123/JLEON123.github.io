@@ -36,10 +36,24 @@ div.brown { color:#ffffff; text-align:left; background-color:#a89d82; border-rad
 </style>
 <div class = "brown">
 
-### I am an undergraduate student 
+### I am an undergraduate student at Utah Valley University. I am majoring in Bioinformatics while also obtaining certificates in Data Analytics and Geographic Information Systems (GIS). I've had the opportunity to be a part of several research projects while attending UVU. I have gained experince and skills from these research projects which include:  
+
+- Collection of plant and soil samples in Capitol Reef National Park
+- Water quality analyses of collected samples from rivers, lakes, and wastewater treatment plants
+- Geospatial analyses of land cover and land use in the Utah Lake watershed
+- Writing scripts in Bash and R to analyze microbial data from Mangrove samples
+
+___
+
+## Research Photos
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+```{r, echo=FALSE,out.height='10%', out.width='20%'}
+knitr::include_graphics(c('../media/cow.jpg','../media/Photometerjiggy.jpg','../media/TimpWWTPjiggy.jpg', '../media/Me_sampling.JPEG'))
+``` 
+
 
 
