@@ -15,7 +15,7 @@ div.grey { text-align:center; background-color:#333333; border-radius: 20px; pad
 </style>
 <div class = "grey">
 
-# [Home](http://JLEON123.github.io) | [About Me](https://JLEON123.github.io/aboutme) | [Portfolio](http://JLEON123.github.io/portfolio/) | [CV](https://JLEON123.github.io/aboutme/Josh_Leon_CV.pdf)
+# [Home](http://JLEON123.github.io) | [About Me](https://JLEON123.github.io/aboutme/index.html) | [Portfolio](http://JLEON123.github.io/portfolio/) | [CV](https://JLEON123.github.io/aboutme/Josh_Leon_CV.pdf)
 
 </div>
 
