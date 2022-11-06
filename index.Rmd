@@ -1,6 +1,6 @@
 ---
 output: html_document
-pagetitle: Josh Leon
+pagetitle: Josh Leon - Home
 ---
 
 <style type="text/css">
@@ -21,7 +21,7 @@ div.grey { text-align:center; background-color:#333333; border-radius: 20px; pad
 </style>
 <div class = "grey">
 
-# [Home](http://JLEON123.github.io) | [About Me](https://JLEON123.github.io/aboutme/index.html) | [Portfolio](http://JLEON123.github.io/portfolio/) | [CV](https://JLEON123.github.io/aboutme/CV.pdf/)
+# [Home](http://JLEON123.github.io) | [About Me](https://JLEON123.github.io/aboutme/index.html) | [Portfolio](http://JLEON123.github.io/portfolio/index.html) | [CV](https://JLEON123.github.io/aboutme/CV.pdf/)
 
 <div style= "float:right;position: relative;top:60px">
 ```{r, echo=FALSE}
