@@ -43,16 +43,14 @@ div.brown { color:#ffffff; text-align:left; background-color:#a89d82; border-rad
 - Geospatial analyses of land cover and land use in the Utah Lake watershed
 - Writing scripts in Bash and R to analyze microbial data from Mangrove samples
 
-___
 
-## Research Photos
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, echo=FALSE,out.height='10%', out.width='20%'}
-knitr::include_graphics(c('../media/cow.jpg','../media/Photometerjiggy.jpg','../media/TimpWWTPjiggy.jpg', '../media/Me_sampling.JPEG'))
+```{r, echo=FALSE,out.height='40%', out.width='40%', fig.align='center'}
+knitr::include_graphics('../media/photos.jpg')
 ``` 
 
 
