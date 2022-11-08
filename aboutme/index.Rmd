@@ -49,9 +49,15 @@ div.brown { color:#ffffff; text-align:left; background-color:#a89d82; border-rad
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, echo=FALSE,out.height='40%', out.width='40%', fig.align='center'}
-knitr::include_graphics('../media/photos.jpg')
+
+
+
+
+```{r, echo=FALSE}
+knitr::include_graphics('../media/photos2.0.jpg')
 ``` 
 
-
+```{r, echo=FALSE, out.height='40%', out.width='40%', fig.align='right'}
+#knitr::include_graphics('../media/Bash_Script_example.jpg')
+``` 
 
