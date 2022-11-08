@@ -47,4 +47,4 @@ knitr::include_graphics('../media/UVUSquareBlack-0002.png')
 ``` 
 
 
-## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BIOL 3100 Final](http://JLEON123.github.io/portfolio/finalproject/index.html)
+## &nbsp;&nbsp;&nbsp;&nbsp;[BIOL 3100 Final](http://JLEON123.github.io/portfolio/finalproject/index.html)
