@@ -47,6 +47,7 @@ div.white { color:#000000; text-align:left; background-color:#ffffff; border-rad
 ### Josh Leon<br>
 ### Email: Joshuarleon0123@gmail.com<br>
 ### Phone: (385)-447-7934
+### GitHub: https://github.com/JLEON123
 <br><br><br>
 
 </div>
