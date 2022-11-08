@@ -41,23 +41,17 @@ div.brown { color:#ffffff; text-align:left; background-color:#a89d82; border-rad
 - Collection of plant and soil samples in Capitol Reef National Park
 - Water quality analyses of collected samples from rivers, lakes, and wastewater treatment plants
 - Geospatial analyses of land cover and land use in the Utah Lake watershed
-- Writing scripts in Bash and R to analyze microbial data from Mangrove samples
+- Writing scripts in Bash and R to analyze microbial data from Mangrove samples  
 
-
+___
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-
-
-
 ```{r, echo=FALSE}
 knitr::include_graphics('../media/photos2.0.jpg')
 ``` 
 
-```{r, echo=FALSE, out.height='40%', out.width='40%', fig.align='right'}
-#knitr::include_graphics('../media/Bash_Script_example.jpg')
-``` 
+
 
