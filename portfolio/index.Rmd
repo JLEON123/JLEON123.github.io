@@ -26,7 +26,7 @@ div.brownone { color:#ffffff; text-align:center; background-color:#a89d82; borde
 </style>
 <div class = "brownone">
 
-## These are the links to the some of my work
+## These are the links to some of my work
 
 ___
 
