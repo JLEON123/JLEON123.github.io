@@ -32,15 +32,14 @@ h1 {color: black;
     font-size: 200%}
 p  {color: black;
     font-size: 125%}
-a  {font-size: 115%}
-
+a {font-size: 115%}
 a:link {
-  color: #000080;
+  color: #ffffff;
   background-color: transparent;
   text-decoration: none;
 }
 a:visited {
-  color: #000080;
+  color: #ffffff;
   background-color: transparent;
   text-decoration: none;
 }
@@ -55,24 +54,58 @@ a:active {
   text-decoration: underline;
   font-size: 125%;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #36454F;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+  border-right: 1px solid #ffffff;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.active {
+  background-color: #04AA6D;
+}
 </style>
 
-
-<div style = text-align:center;>
-<br>
-<a href="http://JLEON123.github.io">Homepage</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://JLEON123.github.io/portfolio/">Data Analytics</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://JLEON123.github.io">Research</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://JLEON123.github.io">Conferences</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://JLEON123.github.io">Publications</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://JLEON123.github.io">CV</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</div>
+<ul>
+  <li><a href="http://JLEON123.github.io">Homepage</a></li>
+  <li><a href="http://JLEON123.github.io/portfolio/">Data Analytics</a></li>
+  <li><a href="http://JLEON123.github.io">Research</a></li>
+  <li><a href="http://JLEON123.github.io">Conferences</a></li>
+  <li><a href="http://JLEON123.github.io">Publications</a></li>
+  <li><a href="http://JLEON123.github.io">CV</a></li>
+</ul>
 
 </head>
 
 ___
 
 <body>
+
+<br>
 
 <h1>
 <img src="./media/small_headshot.JPG" alt="Utah Lake Research" style="float:right;height:400px;">
@@ -89,7 +122,7 @@ My name is Josh Leon and I am from Payson, Utah. I am an undergraduate student a
 Phone: (385)-447-7934    
 
 <div style=font-size:100%;>
-Email: JoshuaRLeon0123@gmail.com    
+Email: JoshuaRLeon0123gmail.com    
 </div> 
 </p>
 
