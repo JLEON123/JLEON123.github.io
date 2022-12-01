@@ -1,8 +1,16 @@
 ---
-output: html_document
 pagetitle: Josh Leon - Home
+output:
+  html_document:
+    theme: journal
 ---
+<html>
+<head>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
+library(tidyverse)
+```
 <style type="text/css">
 .main-container {
   max-width: 1800px;
@@ -12,52 +20,91 @@ pagetitle: Josh Leon - Home
 </style>
 
 <style>
-div.brown { background-color:#a89d82; border-radius: 20px; padding: 20px;}
-</style>
-<div class = "brown">
+  body {background-color:#d3d3d3;}
+</style> 
 
 <style>
-div.grey { text-align:center; background-color:#333333; border-radius: 20px; padding: 20px;}
+div.white {background-color:#ffffff;}
 </style>
-<div class = "grey">
 
-# [Home](http://JLEON123.github.io) | [About Me](https://JLEON123.github.io/aboutme/index.html) | [Portfolio](http://JLEON123.github.io/portfolio/index.html) | [CV](https://JLEON123.github.io/aboutme/CV.pdf/)
+<style>
+h1 {color: black;
+    font-size: 200%}
+p  {color: black;
+    font-size: 125%}
+a  {font-size: 115%}
 
-<div style= "float:right;position: relative;top:60px">
-```{r, echo=FALSE}
-knitr::include_graphics('./media/small_headshot.JPG')
-```
+a:link {
+  color: #000080;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #000080;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 125%;
+}
+</style>
 
-<br><br><br><br><br><br><br><br><br>
-<br><br><br>
 
+<div style = text-align:center;>
+<br>
+<a href="http://JLEON123.github.io">Homepage</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://JLEON123.github.io/portfolio/">Data Analytics</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://JLEON123.github.io">Research</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://JLEON123.github.io">Conferences</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://JLEON123.github.io">Publications</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://JLEON123.github.io">CV</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
+
+</head>
 
 ___
 
-<br>
+<body>
 
-<style>
-div.white { color:#000000; text-align:left; background-color:#ffffff; border-radius: 15px; padding: 20px;}
-</style>
-<div class = "white">
+<h1>
+<img src="./media/small_headshot.JPG" alt="Utah Lake Research" style="float:right;height:400px;">
+<b>About Me</b>
+</h1>  
 
-## **Contact Info:**
+<p> 
+My name is Josh Leon and I am from Payson, Utah. I am an undergraduate student at Utah Valley University studying <a style="font-size:100%;"href="https://www.uvu.edu/catalog/current/departments/biology/bioinformatics-bs/">Bioinformatics</a> while also obtaining certificates in <a style="font-size:100%;" href="https://www.uvu.edu/catalog/current/departments/information-systems-and-technology/data-analytics-certificate-of-proficiency/">Data Analytics</a> and <a style="font-size:100%;" href="https://www.uvu.edu/catalog/current/departments/earth-science/geographic-information-systems-certificate-of-proficiency/">Geographic Information Systems (GIS)</a>. When I'm not messing with code or making maps, I enjoy playing with my dog, spending time with my wife, supporting my football/fútbol teams, and gaming on the Switch.
+</p>
 
-### Josh Leon<br>
-### Email: Joshuarleon0123@gmail.com<br>
-### Phone: (385)-447-7934
-### GitHub: https://github.com/JLEON123
-<br><br><br>
+<h1><b>Contact Info</b></h1>
 
-</div>
+<p>
+Phone: (385)-447-7934    
+
+<div style=font-size:100%;>
+Email: JoshuaRLeon0123@gmail.com    
+</div> 
+</p>
+
+<p>
+<a style="font-size:100%;" href="https://github.com/JLEON123">GitHub</a>
+</p>
+
+<p>
+<a style="font-size:100%;" href="https://www.linkedin.com/in/jleon123/">LinkedIn</a>
+</p>
+
+<br><br><br>    
+
+___
 
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
-
-library(tidyverse)
-```
-
-
+</body>
+</html>
