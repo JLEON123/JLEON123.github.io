@@ -1,7 +1,16 @@
 ---
-output: html_document
-pagetitle: Josh Leon - Portfolio
+pagetitle: Josh Leon - Data Analysis
+output:
+  html_document:
+    theme: journal
 ---
+<html>
+<head>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+```
 <style type="text/css">
 .main-container {
   max-width: 1800px;
@@ -11,40 +20,107 @@ pagetitle: Josh Leon - Portfolio
 </style>
 
 <style>
-div.grey { text-align:center; background-color:#333333; border-radius: 20px; padding: 20px;}
-</style>
-<div class = "grey">
-
-# [Home](http://JLEON123.github.io) | [About Me](https://JLEON123.github.io/aboutme/index.html) | [Portfolio](http://JLEON123.github.io/portfolio/index.html) | [CV](https://JLEON123.github.io/aboutme/Josh_Leon_CV.pdf)
-
-</div>
-
-<br>
+  body {background-color:#d6c0a8;}
+</style> 
 
 <style>
-div.brownone { color:#ffffff; text-align:center; background-color:#a89d82; border-radius: 20px; padding: 20px;}
+div.white {background-color:#ffffff;}
 </style>
-<div class = "brownone">
 
-## These are the links to some of my work
+<style>
+h1 {color: black;
+    font-size: 200%}
+p  {color: black;
+    font-size: 125%}
+a {font-size: 115%}
+a:link {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 125%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #36454F;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+  border-right: 1px solid #ffffff;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.active {
+  background-color: #04AA6D;
+}
+</style>
+
+<ul>
+  <li><a href="http://JLEON123.github.io">Homepage</a></li>
+  <li><a href="http://JLEON123.github.io/portfolio/">Data Analytics</a></li>
+  <li><a href="http://JLEON123.github.io">Research</a></li>
+  <li><a href="http://JLEON123.github.io">Conferences</a></li>
+  <li><a href="http://JLEON123.github.io">Publications</a></li>
+  <li><a href="http://JLEON123.github.io">CV</a></li>
+</ul>
+
+</head>
 
 ___
 
+<body>
+
+<br>
+
+<div style=text-align:center; font-size:150%;>
+<h1>
+<b>Examples of my work</b>
+</h1>  
 </div>
 
-<style>
-div.brown { color:#ffffff; text-align:left; background-color:#a89d82; border-radius: 20px; padding: 20px;}
-</style>
-<div class = "brown">
+___  
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-```{r, echo=FALSE,out.height='10%', out.width='20%'}
-knitr::include_graphics('../media/UVUSquareBlack-0002.png')
-``` 
+<img src="./media/UVUSquareBlack-0002.png" alt="UVU logo" style="float:left:position; width:300px;">
 
 
-## &nbsp;&nbsp;&nbsp;&nbsp;[BIOL 3100 Final](http://JLEON123.github.io/portfolio/finalproject/index.html)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://JLEON123.github.io/portfolio/finalproject/">Mangrove Microbiome</a>
+
+
+</body>
+</html>
