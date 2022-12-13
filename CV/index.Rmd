@@ -1,0 +1,111 @@
+---
+pagetitle: Josh Leon - Home
+output:
+  html_document:
+    theme: journal
+---
+
+<html>
+<head>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+```
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+  body {background-color:#d6c0a8;}
+</style> 
+
+<style>
+div.white {background-color:#ffffff;}
+</style>
+
+<style>
+h1 {color: black;
+    font-size: 200%}
+p  {color: black;
+    font-size: 125%}
+a {font-size: 115%}
+a:link {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 125%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #36454F;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+  border-right: 1px solid #ffffff;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.active {
+  background-color: #04AA6D;
+}
+</style>
+
+<ul>
+  <li><a href="http://JLEON123.github.io">Homepage</a></li>
+  <li><a href="http://JLEON123.github.io/portfolio/">Data Analytics</a></li>
+  <li><a href="http://JLEON123.github.io/Research/index.html">Research</a></li>
+  <li><a href="http://JLEON123.github.io">Conferences</a></li>
+  <li><a href="http://JLEON123.github.io">Publications</a></li>
+  <li><a href="http://JLEON123.github.io">CV</a></li>
+</ul>
+
+</head>
+
+<body>
+In progress
+```{r image-ref-for-in-text, echo = FALSE, message=FALSE, fig.align='center'}
+knitr::include_graphics("./Josh_Leon_CV.pdf")
+```
+</body>
+</html>
