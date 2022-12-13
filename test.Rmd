@@ -1,0 +1,130 @@
+---
+pagetitle: Josh Leon - Home
+output:
+  html_document:
+    theme: journal
+---
+<html>
+<head>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+```
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+  body {background-color:#d3d3d3;}
+</style> 
+
+<style>
+div.white {background-color:#ffffff;}
+</style>
+
+<style>
+h1 {color: black;
+    font-size: 200%}
+p  {color: black;
+    font-size: 125%}
+a  {font-size: 115%}
+
+a:link {
+  color: #000080;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #000080;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 125%;
+}
+</style>
+
+
+<div style = text-align:center;>
+<br>
+<a href="http://JLEON123.github.io">Homepage</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://JLEON123.github.io/portfolio/">Data Analytics</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://JLEON123.github.io">Research</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://JLEON123.github.io">Conferences</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://JLEON123.github.io">Publications</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://JLEON123.github.io">CV</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+
+</head>
+
+___
+
+<h1><b>About Me</b></h1>  
+
+<p> 
+My name is Josh Leon and I am an undergraduate student at Utah Valley University. I am majoring in <a href="https://www.uvu.edu/catalog/current/departments/biology/bioinformatics-bs/">Bioinformatics</a> while also obtaining certificates in <a href="https://www.uvu.edu/catalog/current/departments/information-systems-and-technology/data-analytics-certificate-of-proficiency/">Data Analytics</a> and <a href="https://www.uvu.edu/catalog/current/departments/earth-science/geographic-information-systems-certificate-of-proficiency/">Geographic Information Systems (GIS)</a>.
+</p>
+
+I've had the opportunity to be a part of several research projects while attending UVU. I have gained experience and skills from these research projects which include:
+
+- Collection of plant and soil samples in Capitol Reef National Park
+- Water quality analyses of collected samples from rivers, lakes, and wastewater treatment plants
+- Geospatial analyses of land cover and land use in the Utah Lake watershed
+- Writing scripts in Bash and R to analyze microbial data from Mangrove samples
+</p>
+
+<div style= "float:right;position: relative;top:60px">
+```{r, echo=FALSE}
+knitr::include_graphics('./media/small_headshot.JPG')
+```
+
+</div>
+
+<h1><b>Contact Info</b></h1>
+
+<p>
+Email: Joshuarleon0123@gmail.com  
+Phone: (385)-447-7934  
+GitHub: https://github.com/JLEON123  
+</p>
+
+</div>
+</body>
+</html>
+
+a:link {
+  color: #000080;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #000080;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 125%;
+}
+
+

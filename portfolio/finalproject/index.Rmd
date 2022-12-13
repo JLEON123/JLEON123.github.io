@@ -18,7 +18,7 @@ pagetitle: Josh Leon - BIOL 3100 Final
 </style>
 
 <style>
-    body { background-color: #333333; }
+  body { background-color: #333333; }
 </style>
 
 <style>
@@ -39,6 +39,7 @@ div.white { color:#000000; background-color:#ffffff; border-radius: 20px; paddin
 
 
 # **Mangrove Microbiome Analysis**  
+
 ___
 
 
@@ -57,6 +58,11 @@ library(kableExtra)
 # Setting the theme
 theme_set(theme_minimal())
 ```
+
+```{r, echo=FALSE,fig.align='default', fig.cap='*Mangroves are found in salty aquatic areas. They provide food and habitat for many organisms including birds, fish, and microbes. They also play a major role in the carbon cycle.                                           Reference photo: https://ocean.si.edu/ocean-life/plants-algae/mangroves-photos-plants-and-animals*'}
+knitr::include_graphics('./media/Mangrove_picture.jpg')
+```
+
 
 ## __Introduction__
 Introduce the project
@@ -132,11 +138,7 @@ full_glimpse %>% kable() %>%
 
 ### *Study Area*
 The mangrove samples were taken from areas in South-East Asia, specifically, the countries of Malaysia and Singapore.
-
-<div class = "brown">
-
 ```{r, include=FALSE}
-
 # Getting just the geo-spatial data
 loc_table <- sam_data %>% 
   select(c(geo_loc_name,Location,Lon, Lat))
@@ -232,9 +234,6 @@ map_malaysia <-
 #ggsave('./media/map_of_malaysia.jpg',plot = map_malaysia,device = 'jpeg',dpi = 300)
 knitr::include_graphics('./media/maps.jpg')
 ```
-
-</div>
-
 ___
 
 ## **Analyses**
@@ -244,7 +243,8 @@ Doing analysis stuff
 To begin, I want to see if I can find any trends in the data. I'll start by comparing the abundance of bacteria to fungi in the samples based on three predicting variables.   
   **1. The species of the mangrove (*Avicennia alba* or *Sonneratia alba*)**  
   **2. The plant structure of the collected sample (Fruit, Leaf, Pneumatophore, or Sediment)**  
-  **3. The location, both specific and by country, the sample was collected from (See maps above) **
+  **3a. The country the sample was collected from**  
+  **3b. The specific location the sample was collected from (See maps above)**
 ```{r}
 # Only showing the code for the Species abundance plot! #
 # The other two are very similar #
@@ -586,8 +586,6 @@ Final_CAP <- CAP2 +
 
 ```
 
-<div class = "brown">
-
 ```{r, echo=FALSE}
 # Saving all plots to format in Canva #
 #ggsave(filename = './media/Species_abundance.jpg',plot = Final_SAP, device = 'jpeg',dpi = 300)
@@ -599,6 +597,39 @@ knitr::include_graphics('./media/Abundance_graphs.jpg')
 knitr::include_graphics('./media/Abundance2.jpg')
 ```
 
-</div>
+From these plots, it appears that the microbial abundance is affected by all three predicting variables. However, using a general linearized model, we can see that...
+
+```{r}
+## Creating models based on each predictor plotted above ##
+
+# Model data #
+Host_Data <- full %>% 
+  group_by(Host) %>% 
+  summarize(Count = Count,
+            Total = sum(Count),
+            Abundance = Count/Total,
+            Kingdom = Kingdom)
+
+# Kingdom as a function of Host species
+Species_model <- glm(data = Host_Data,
+                     formula = Kingdom ~ Host)
+
+Species_mod <- Host_Data %>% 
+  mutate(Fungi = case_when(Kingdom == 'Fungi' ~ TRUE,
+                                  TRUE ~ FALSE)) %>% 
+  glm(data = ., 
+      formula = Fungi ~ Host,
+      family = "binomial")
+```
+
+# Vegan package
+adonis2
+
+
+adonis2(otu_table(ps) ~ Island * LAt * whatever)
+
+on relative abundance transformed data
+
+
 
 
