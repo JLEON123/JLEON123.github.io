@@ -1,48 +1,12 @@
 ---
-output: 
+pagetitle: Josh Leon - Mangrove Microbiome
+output:
   html_document:
+    theme: journal
     code_folding: hide
-    toc: true
-    toc_depth: 3
-    toc_float: true
-    smooth_scrool: true
-
-pagetitle: Josh Leon - BIOL 3100 Final
 ---
-<style type="text/css">
-.main-container {
-  max-width: 1800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-
-<style>
-  body { background-color: #333333; }
-</style>
-
-<style>
-div.brown { text-align:center; background-color:#a89d82; border-radius: 10px; padding: 10px;}
-</style>
-<div class = "brown">
-
-## [Home](http://JLEON123.github.io) | [About Me](https://JLEON123.github.io/aboutme/index.html) | [Portfolio](http://JLEON123.github.io/portfolio/index.html)
-
-</div>
-
-<br>
-
-<style>
-div.white { color:#000000; background-color:#ffffff; border-radius: 20px; padding: 20px;}
-</style>
-<div class = "white">
-
-
-# **Mangrove Microbiome Analysis**  
-
-___
-
-
+<html>
+<head>
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = 'center')
 # Loading Libraries
@@ -65,28 +29,127 @@ library(seqinr); packageVersion("seqinr")
 theme_set(theme_minimal())
 ```
 
-```{r, echo=FALSE,fig.align='default', fig.cap='*Mangroves are found in salty aquatic areas. They provide food and habitat for many organisms including birds, fish, and microbes. They also play a major role in the carbon cycle.                                           Reference photo: https://ocean.si.edu/ocean-life/plants-algae/mangroves-photos-plants-and-animals*'}
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+  body {background-color:#d6c0a8;}
+</style> 
+
+<style>
+div.white {background-color:#ffffff;}
+</style>
+
+<style>
+h1 {color: black;
+    font-size: 200%}
+p  {color: black;
+    font-size: 125%}
+a {font-size: 115%}
+a:link {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: coral;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 125%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #36454F;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+  border-right: 1px solid #ffffff;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.active {
+  background-color: #04AA6D;
+}
+</style>
+
+<ul>
+  <li><a href="http://JLEON123.github.io">Homepage</a></li>
+  <li><a href="http://JLEON123.github.io/portfolio/">Data Analytics</a></li>
+  <li><a href="http://JLEON123.github.io/Research/index.html">Research</a></li>
+  <li><a href="http://JLEON123.github.io">Conferences</a></li>
+  <li><a href="http://JLEON123.github.io">Publications</a></li>
+  <li><a href="http://JLEON123.github.io">CV</a></li>
+</ul>
+
+</head>
+<body>
+
+<br><br>
+
+<h1>
+<b>Mangrove Microbiome Analysis</b>
+</h1>
+
+___
+
+```{r, echo=FALSE,fig.align='default', fig.cap='*Mangroves are found in salty aquatic areas. Reference photo: https://ocean.si.edu/ocean-life/plants-algae/mangroves-photos-plants-and-animals*'}
 knitr::include_graphics('./media/Mangrove_picture.jpg')
 ```
 
 
-## __Introduction__
-Introduce the project
+<h1>
+<b>Introduction</b>
+</h1> 
+<p>
+Mangroves are both a plant and an important ecosystem to many organisms, including plants, fish, birds, and microorganisms. They play a vital role in the carbon cycle and this is because of the microbes found here. This study will look at samples that are collected from different parts of the mangrove species *Sonneratia alba* and analyze the microbial commmunity found from the sequencing.
+</p>
 
 ___
 
-### *Libraries Used*
-```{r, echo=FALSE}
-# Creating two vectors, one with the library name and another with it's version
-Library <- c("R", "tidyverse", "dada2", "purrr", "Biostrings", "ShortRead", "phyloseq", "ggmap", 'kableExtra')
-Version <- c("4.1.1", '1.3.2', '1.20.0', '0.3.5', '2.60.2', '1.50.0', '1.36.0', '3.0.1', '1.3.4')
-# Combining the two vectors to make a data frame to display
-Lib_versions <- data.frame(Library, Version)
-Lib_versions %>% kable() %>% kable_minimal(lightable_options = 'striped')
-```
-
-### *Input Data*
+<h1>
+<b>*Input Data*</b>
+</h1>  
+<p>
 The data used in this project was retrieved from this [github repository](https://github.com/gzahn/SE_Asia_Mangrove_Bacteria). The data was organized by joins and by using tidy conventions to make the following data frame which focuses on biological and geo-spatial attributes.
+</p>
+
+<div style=background-color:"white;">
 ```{r}
 # Reading in data
 Df <- readRDS('./data/bact_and_fungi_clean_ps_object')
@@ -138,107 +201,17 @@ full_glimpse2 <-
 full_glimpse <- full_join(full_glimpse1, full_glimpse2)
 
 full_glimpse %>% kable() %>% 
-  kable_minimal(lightable_options = 'hover') %>% 
-  scroll_box(width = "800px", height = "400px")
+  kable_classic(lightable_options = 'hover') %>% 
+  scroll_box(width = "1400px", height = "400px")
 ```
+</div>
 
-```{r, echo = FALSE}
-sample_data(Df)
-
-# simplify ASV names
-seqs <- rownames(tax_table(Df))
-names(seqs) <- paste0("ASV_",1:length(seqs)) # This propagates to the tip labels of the tree
-
-# Multiple sequence alignment  ####
-alignment <- msa(seqs,method = "Muscle", type = "dna",verbose = TRUE,order = "input",maxiters = 10)
-
-# save progress 
-saveRDS(alignment,"./output/16S_dna_alignment_muscle.RDS")
-
-# Convert to phangorn format
-phang.align = as.phyDat(alignment, type = "DNA")
-
-# Model testing
-mt <- modelTest(phang.align)
-mt$Model
-
-# distance - maximum likelihood ####
-dm <- dist.ml(phang.align,model = "JC69")
-
-
-# save progress
-saveRDS(dm,"./output/16S_ML_Distance.RDS")
-
-# Initial neighbor-joining and upgma trees ####
-treeNJ <- NJ(dm) # Note, tip order != sequence order
-treeUPGMA <- upgma(dm)
-
-# find parsimony scores for each tree
-parsimony(treeNJ, phang.align)
-parsimony(treeUPGMA, phang.align)
-
-# search through treespace with NNI and SPR algorithm
-optim <- optim.parsimony(treeNJ,phang.align)
-
-
-# save progress
-saveRDS(treeNJ, "./cache/16S_treeNJ.RDS")
-saveRDS(optim, "./cache/16S_tree_optim.RDS")
-
-
-
-# Maximum likelihood ####
-fit = pml(treeNJ, data=phang.align)
-fitJC <- optim.pml(fit, model = "JC", rearrangement = "stochastic")
-
-
-# edit tip labels
-fit$tree$tip.label <- seqs
-
-
-# save trees
-saveRDS(fit,"./cache/16S_fit_treeNJ.RDS")
-
-
-
-# add tree to phyloseq object ####
-ps2 <- phyloseq(tax_table(tax_table(ps)),
-                otu_table(otu_table(ps)),
-                sample_data(sample_data(ps)),
-                phy_tree(fit$tree))
-
-
-# Save updated phyloseq object with tree
-saveRDS(ps2, "./cache/ps_not-cleaned_w_tree.RDS")
-
-# Find the number of taxa
-ntaxa(Df)
-# sample names
-sample_names(Df)
-
-# how many sequences observed in each sample?
-otu_table(Df) %>% rowSums()
-# how many times was each taxon observed?
-otu_table(Df) %>% colSums()
-
-# how many different samples was each taxon found in?
-asv <- otu_table(Df) %>% as("matrix") 
-asv <- as.data.frame(asv) # convert to matrix before you can convert to data frame
-asv[asv>0] <- 1 # convert to presence/absence
-colSums(asv) # sum of presence (present = 1; absent = 0)
-
-# what was the most widespread taxon (not abundance)
-widespread_seq <- names(asv)[which(colSums(asv) == max(colSums(asv)))] # this gives long sequence
-tax_table(Df)[widespread_seq,] # this pull that row from ASV table
-
-# what was most abundant (raw counts) taxon?
-abund_seq <- which(otu_table(Df) %>% colSums() == max(otu_table(Df) %>% colSums()))
-tax_table(Df)[abund_seq,]
-otu_table(Df)[,abund_seq]
-```
-
-### *Study Area*
+<h1>
+<b>**Study Area**</b>
+</h1>  
+<p>
 The mangrove samples were taken from areas in South-East Asia, specifically, the countries of Malaysia and Singapore.
+</p>
 ```{r, include=FALSE}
 # Getting just the geo-spatial data
 loc_table <- sam_data %>% 
@@ -296,10 +269,10 @@ map_singapore <-
         legend.text = element_text(size = 12),
         axis.title = element_text(size = 12), 
         axis.text = element_text(size = 9),
-        plot.background = element_rect(fill = '#a89d82', color = '#a89d82'),
+        plot.background = element_rect(fill = '#d7bea8', color = '#d7bea8'),
         legend.key.size = unit(.3, "cm"),
-        legend.background = element_rect(fill = '#a89d82'),
-        legend.key = element_rect(fill = '#a89d82')) +
+        legend.background = element_rect(fill = '#d7bea8'),
+        legend.key = element_rect(fill = '#d7bea8')) +
   labs(x = 'Longitude',
        y = 'Latitude')
 
@@ -322,30 +295,37 @@ map_malaysia <-
         legend.text = element_text(size = 12),
         axis.title = element_text(size = 12), 
         axis.text = element_text(size = 9),
-        plot.background = element_rect(fill = '#a89d82', color = '#a89d82'),
+        plot.background = element_rect(fill = '#d7bea8', color = '#d7bea8'),
         legend.key.size = unit(.3, "cm"),
-        legend.background = element_rect(fill = '#a89d82'),
-        legend.key = element_rect(fill = '#a89d82')) +
+        legend.background = element_rect(fill = '#d7bea8'),
+        legend.key = element_rect(fill = '#d7bea8')) +
   labs(x = 'Longitude', y = 'Latitude')
 ```
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, fig.align='left'}
 # Saving the maps so that I can easily format them in an outside software (Canva)
-# ggsave('./media/map_of_singapore.jpg',plot = map_singapore,device = 'jpeg',dpi = 300)
+#ggsave('./media/map_of_singapore.jpg',plot = map_singapore,device = 'jpeg',dpi = 300)
 #ggsave('./media/map_of_malaysia.jpg',plot = map_malaysia,device = 'jpeg',dpi = 300)
 knitr::include_graphics('./media/maps.jpg')
 ```
-___
 
-## **Analyses**
-Doing analysis stuff
+___  
 
-### *Exploring the Data*
-To begin, I want to see if I can find any trends in the data. I'll start by comparing the abundance of bacteria to fungi in the samples based on three predicting variables.   
+
+<h1>
+<b>Analyses</b>
+</h1>  
+<h1>
+<b>*Exploring the Data*</b>
+</h1>
+
+<p>
+To begin, I want to see if I can find any trends in the data. I'll start by comparing the abundance of bacteria to fungi in the samples based on three predicting variables.  
   **1. The species of the mangrove (*Avicennia alba* or *Sonneratia alba*)**  
   **2. The plant structure of the collected sample (Fruit, Leaf, Pneumatophore, or Sediment)**  
   **3a. The country the sample was collected from**  
   **3b. The specific location the sample was collected from (See maps above)**
+</p>
 ```{r}
 # Only showing the code for the Species abundance plot! #
 # The other two are very similar #
@@ -409,7 +389,7 @@ Final_SAP <- SAP2 +
   labs(y = 'Relative Abundance', title = 'Abundance by Species') +
   theme(panel.grid.major = element_blank(),
         panel.background = element_rect(fill = 'white'),
-        plot.background = element_rect(fill = '#a89d82', color = '#a89d82'),
+        plot.background = element_rect(fill = '#d7bea8', color = '#d7bea8'),
         plot.title = element_text(size = 19, face = "bold"),
         axis.title.y = element_text(size = 15, color = 'black', face = "bold.italic"),
         axis.title.x = element_blank(),
@@ -491,7 +471,7 @@ Final_STAP <- STAP2 +
         axis.title.x = element_blank(),
         axis.text.y = element_blank(),
         axis.text.x = element_text(size = 12, color = 'black', face = "italic"),
-        plot.background = element_rect(fill = '#a89d82', color = '#a89d82'),
+        plot.background = element_rect(fill = '#d7bea8', color = '#d7bea8'),
         panel.background = element_rect(fill = 'white')) +
   scale_y_continuous(expand = c(0, 0)) + # Removes extra space between axes and bars
   scale_fill_grey()
@@ -615,7 +595,7 @@ Final_LAP <- LAP2 +
         axis.title.x = element_blank(),
         axis.text.x = element_text(size = 13, color = 'black', angle = 90, 
                                    hjust = 0.95, face = "italic"),
-        plot.background = element_rect(fill = '#a89d82', color = '#a89d82'),
+        plot.background = element_rect(fill = '#d7bea8', color = '#d7bea8'),
         panel.background = element_rect(fill = 'white')) +
   scale_y_continuous(expand = c(0, 0)) + # Removes extra space between axes and bars
   scale_fill_grey()
@@ -680,7 +660,7 @@ Final_CAP <- CAP2 +
         axis.text.y = element_text(size = 12, color = 'black'),
         axis.title.x = element_blank(),
         axis.text.x = element_text(size = 13, color = 'black',face = "italic"),
-        plot.background = element_rect(fill = '#a89d82', color = '#a89d82'),
+        plot.background = element_rect(fill = '#d7bea8', color = '#d7bea8'),
         panel.background = element_rect(fill = 'white')) +
   scale_y_continuous(expand = c(0, 0)) + # Removes extra space between axes and bars
   scale_fill_grey()
@@ -697,194 +677,63 @@ Final_CAP <- CAP2 +
 knitr::include_graphics('./media/Abundance_graphs.jpg')
 knitr::include_graphics('./media/Abundance2.jpg')
 ```
-
-From these plots, it appears that the microbial abundance is affected by all three predicting variables. However, using a general linearized model, we can see that...
+<h1>
+<b>*Creating Models*</b>
+</h1>
+<p>
+From these plots, it appears that the microbial abundance is affected by all three predicting variables. However, using a general linearized model for each predictor, we can see that there is a significant difference when looking at host differences (~+1% chance of microbe being a bacteria in *Sonneratia alba* than in *Avicennia alba*). We can also see significant differences of the microbial community when looking at the structure of the plant from where the sample came from. Leaf and sediment samples have a slightly higher chance of containing more bacteria than fruit samples while Pneumatophore samples have a smaller chance of containing bacteria than fruit samples. No significant differences were found when comparing countries or specific locations.
 
 ```{r}
-library(tidyverse); packageVersion("tidyverse")
-library(phyloseq); packageVersion("phyloseq")
-library(ShortRead); packageVersion("ShortRead")
-library(Biostrings); packageVersion("Biostrings")
+# Modelling the species of Mangrove on microbial abundance #
+species_mod_df <- full %>% 
+  select(Host, Microbe) %>% 
+  mutate(Bacteria = case_when(Microbe == 'Bacteria' ~ TRUE,
+                              TRUE ~ FALSE))
 
-# load phyloseq object with phylogenetic tree ####
+species_mod <- glm(data = species_mod_df,
+                   formula = Bacteria ~ Host,
+                   family = 'binomial')
+tidy(species_mod)
 
-ps <- readRDS("./data/bact_and_fungi_clean_ps_object") # change to non-phylogeny stuff
+# Modelling the structure of the sample on microbial abundance #
+structure_mod_df <- full %>% 
+  select(Structure, Microbe) %>% 
+  mutate(Bacteria = case_when(Microbe == 'Bacteria' ~ TRUE,
+                              TRUE ~ FALSE))
+                                   
 
-# Find and remove non-bacteria ####
-ps_nonbact <- subset_taxa(ps, Kingdom != "Bacteria")
+structure_mod <- glm(data = structure_mod_df,
+                     formula = Bacteria ~ Structure,
+                     family = 'binomial')
+tidy(structure_mod) %>% filter(p.value < 0.05)
 
-# quick plot to look at kingdom-level taxonomy
-ps %>% transform_sample_counts(function(x){x/sum(x)}) %>%
-  plot_bar(fill="Kingdom")
-ggsave("./output/16S_Kingdom-Level_Taxonomic_Proportions.png",dpi=500) # save figure for later use
+# Modelling the country of sampling on microbial abundance #NO SIG DIFS
+#country_mod_df <- full %>% 
+#  select(geo_loc_name, Microbe) %>% 
+#  mutate(Bacteria = case_when(Microbe == 'Bacteria' ~ TRUE,
+#                              TRUE ~ FALSE))
+#country_mod <- glm(data = country_mod_df,
+#                     formula = Bacteria ~ geo_loc_name,
+#                     family = 'binomial')
+#tidy(country_mod) %>% filter(p.value < 0.05)
 
-# REMOVE NON-BACTERIA, CHLOROPLASTS, MITOCHONDRIA, and empty samples/taxa ####
-ps <- subset_taxa(ps, Kingdom == "Bacteria")
-tax <- tax_table(ps)
+# Modelling the specific location on microbial abundance # NO SIG DIFS
+#location_mod_df <- full %>% 
+#  select(Location, Microbe) %>% 
+#  mutate(Bacteria = case_when(Microbe == 'Bacteria' ~ TRUE,
+#                              TRUE ~ FALSE))
+                                   
 
-ps <- subset_taxa(ps,Class != "Chloroplast")
-ps <- subset_taxa(ps, taxa_sums(ps) > 0)
-ps <- subset_samples(ps, sample_sums(ps) > 0)
-
-# Save DNA sequences apart from rownames (from subsetted ps object)
-seqs <- taxa_names(ps)
-seqs <- DNAStringSet(seqs)
-saveRDS(seqs,"./data/16S_ASV_reference_sequences.RDS")
-
-# Save RDS object for cleaned up Phyloseq object
-saveRDS(ps, file = "./data/clean_phyloseq_object.RDS")
+#location_mod <- glm(data = location_mod_df,
+#                     formula = Bacteria ~ Location,
+#                     family = 'binomial')
+#tidy(location_mod) %>% filter(p.value < 0.05)
 ```
 
-# Vegan package
-adonis2
-
-
-adonis2(otu_table(ps) ~ Island * LAt * whatever)
-
-on relative abundance transformed data
-
-```{r, echo = FALSE}
-# Load cleaned phyloseq object ####
-
-# what was the most widespread taxon (not abundance)
-widespread_seq <- names(asv)[which(colSums(asv) == max(colSums(asv)))] # this gives long sequence
-tax_table(Df)[widespread_seq,] # this pull that row from ASV table
-
-# what was most abundant (raw counts) taxon?
-abund_seq <- which(otu_table(Df) %>% colSums() == max(otu_table(Df) %>% colSums()))
-tax_table(Df)[abund_seq,]
-otu_table(Df)[,abund_seq]
-
-# access the phylogenetic tree
-phy_tree(Df)
-plot_tree(ps,color="Phylum")
-# this tree needs some refining, but it's will work for this tutorial
 
 
 
-# Alpha diversity metrics ####
 
-# since we have no singletons (consequence of DADA2), we cannot use Chao1 estimate!
-# plot alpha diversity for every sample
-plot_richness(ps, 
-              measures = c("Observed","Shannon","Simpson"), 
-              color = "Microbe",
-              sortby = "Observed") +
-  theme(axis.text.x = element_blank())
-
-# plot, grouped by colony color with added boxplot
-plot_richness(ps, 
-              x = "Microbe",
-              measures = c("Observed","Shannon","Simpson"), 
-              color = "Microbe", 
-              sortby = "Observed") +
-  geom_boxplot(alpha = .5) +
-  theme_minimal()
-ggsave("./graphs/alpha_diversity_boxplot.png",dpi=300,height = 4,width = 6)
-
-# transform raw counts to relative abundance ####
-ps_ra <- transform_sample_counts(ps, fun = function(x){x/sum(x)})
-
-# Beta-diversity ####
-
-# Ordination
-dca <- ordinate(ps_ra)
-plot_ordination(ps_ra,dca,color = "Microbe") 
-
-(
-  ord1 <- plot_ordination(ps_ra,dca,color = "Status",shape="Island") +
-  geom_point(size=4)  + theme_minimal() +
-    theme(legend.position = "top") +
-    labs(title = "DCA - Bray")
-)
-
-# try another ordination method
-nmds <- ordinate(ps_ra,method = "NMDS")
-
-(
-ord2 <- plot_ordination(ps_ra,nmds,color = "Status",shape="Island") +
-  geom_point(size=4)  + theme_minimal() +
-    theme(legend.position = "none") +
-    labs(title = "NMDS - Bray")
-)
-
-
-# also try with unifrac distance, which takes phylogeny into account
-unifrac.dist <- UniFrac(ps_ra)
-unifrac <- ordinate(ps_ra,method = "NMDS",distance = unifrac.dist)
-
-(
-ord3 <- plot_ordination(ps_ra,unifrac,color = "Microbe",shape="Island") +
-  geom_point(size=4) + theme_minimal() +
-    theme(legend.position = "none") +
-    labs(title = "NMDS - Unifrac")
-)
-
-# combine all plots into one figure for comparison
-ord1 / ord2 / ord3
-ggsave("./graphs/ordinations.png",dpi=500,width = 6,height = 8)
-
-# permanova ####
-# pull out components
-asv <- otu_table(ps_ra) %>% as("matrix") %>% as.data.frame()
-meta <- sample_data(ps_ra) %>% as.data.frame()
-
-# run permanova model with colony_color and Island as predictors (with interaction term included)
-permanova.bray <- vegan::adonis(asv ~ meta$Status * meta$Island,method = "bray")
-permanova.bray
-
-# save output to a file
-sink("./cache/permANOVA_Table.txt")
-permanova.bray
-sink(NULL)
-
-# try with jaccard distance as well
-permanova.jaccard <- vegan::adonis(asv ~ meta$Status * meta$Island,method = "jaccard")
-permanova.jaccard
-
-# Island appears to be a significant indicator of community structure in either case...
-
-# Differential abundance/dispersion tests ####
-
-# Here, we use the corncob package to test for taxa that have differential abundance/dispersion between groups
-
-
-# use non-transformed data!
-set.seed(123)
-da_analysis_island <- differentialTest(formula = ~ Island, #abundance
-                                             phi.formula = ~ 1, #dispersion
-                                             formula_null = ~ 1, #mean
-                                             phi.formula_null = ~ 1,
-                                             test = "Wald", boot = FALSE,
-                                             data = ps,
-                                             fdr_cutoff = 0.05,
-                                             full_output = TRUE)
-plot(da_analysis_island)
-
-
-# find the significant taxa
-da_analysis_island$significant_taxa
-da_analysis_island$significant_taxa %>% otu_to_taxonomy(data=ps)
-
-# This is a helper function for plotting corncob results. It's found in "scripts/bbdml_helper.R" 
-bbdml_obj <- multi_bbdml(da_analysis_island,
-                         ps_object = ps,
-                         mu_predictor = "Island",
-                         phi_predictor = "Island",
-                         taxlevels = 6)
-
-# another helper function found in the same file
-plot_multi_bbdml(bbdml_obj,
-                 color="Island", 
-                 pointsize = 3)
-
-
-# This saves a plot for each significant taxon in your environment called bbdml_plot_N (1 through number of sig. taxa)
-
-# view all the plots together using patchwork package
-(bbdml_plot_1 / bbdml_plot_2 / bbdml_plot_3)
-ggsave("./graphs/bbdml_plot_all_sig_taxa.png",height = 6, width = 8)
-```
 
 
 
