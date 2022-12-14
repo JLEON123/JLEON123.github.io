@@ -137,7 +137,7 @@ knitr::include_graphics('./media/Mangrove_picture.jpg')
 <b>Introduction</b>
 </h1> 
 <p>
-Mangroves are both a plant and an important ecosystem to many organisms, including plants, fish, birds, and microorganisms. They play a vital role in the carbon cycle and this is because of the microbes found here. This study will look at samples that are collected from different parts of the mangrove species *Sonneratia alba* and analyze the microbial commmunity found from the sequencing.
+Mangroves are both a plant and an important ecosystem to many organisms, including plants, fish, birds, and microorganisms. They play a vital role in the carbon cycle and this is because of the microbes found here. This study will look at samples that are collected from different parts of the mangrove species *Sonneratia alba* and *Avicennia alba* and analyze the microbial community found from the sequencing.
 </p>
 
 ___
@@ -681,8 +681,10 @@ knitr::include_graphics('./media/Abundance2.jpg')
 <b>*Creating Models*</b>
 </h1>
 <p>
-From these plots, it appears that the microbial abundance is affected by all three predicting variables. However, using a general linearized model for each predictor, we can see that there is a significant difference when looking at host differences (~+1% chance of microbe being a bacteria in *Sonneratia alba* than in *Avicennia alba*). We can also see significant differences of the microbial community when looking at the structure of the plant from where the sample came from. Leaf and sediment samples have a slightly higher chance of containing more bacteria than fruit samples while Pneumatophore samples have a smaller chance of containing bacteria than fruit samples. No significant differences were found when comparing countries or specific locations.
+From these plots, it appears that the microbial abundance is affected by all three predicting variables. However, using a general linearized model for each predictor, we can see that there is a significant difference when looking at host differences (~+1% chance of microbe being a bacteria in *Sonneratia alba* than in *Avicennia alba*). We can also see significant differences of the microbial community when looking at the structure of the plant from where the sample came from. Leaf and sediment samples have a slightly higher chance of containing more bacteria than fruit samples while Pneumatophore samples have a smaller chance of containing bacteria than fruit samples. No significant differences were found when comparing countries or specific locations. However, significant results were shown for latitude and longitude changes. As the location of the sampling moved south, there was a higher chance of the sample being a bacterial sample as well as when the site of sampling was further east.
+</p>
 
+<p style="text-align:center;">Microbe as a function of mangrove Species
 ```{r}
 # Modelling the species of Mangrove on microbial abundance #
 species_mod_df <- full %>% 
@@ -694,7 +696,9 @@ species_mod <- glm(data = species_mod_df,
                    formula = Bacteria ~ Host,
                    family = 'binomial')
 tidy(species_mod)
-
+```
+Microbe as a function of plant structure
+```{r}
 # Modelling the structure of the sample on microbial abundance #
 structure_mod_df <- full %>% 
   select(Structure, Microbe) %>% 
@@ -705,31 +709,63 @@ structure_mod_df <- full %>%
 structure_mod <- glm(data = structure_mod_df,
                      formula = Bacteria ~ Structure,
                      family = 'binomial')
-tidy(structure_mod) %>% filter(p.value < 0.05)
-
-# Modelling the country of sampling on microbial abundance #NO SIG DIFS
-#country_mod_df <- full %>% 
-#  select(geo_loc_name, Microbe) %>% 
-#  mutate(Bacteria = case_when(Microbe == 'Bacteria' ~ TRUE,
-#                              TRUE ~ FALSE))
-#country_mod <- glm(data = country_mod_df,
-#                     formula = Bacteria ~ geo_loc_name,
-#                     family = 'binomial')
-#tidy(country_mod) %>% filter(p.value < 0.05)
+tidy(structure_mod)
+```
+Microbe as a function of Location and Country
+```{r}
+#Modelling the country of sampling on microbial abundance #NO SIG DIFS
+country_mod_df <- full %>% 
+  select(geo_loc_name, Microbe) %>% 
+  mutate(Bacteria = case_when(Microbe == 'Bacteria' ~ TRUE,
+                              TRUE ~ FALSE))
+country_mod <- glm(data = country_mod_df,
+                     formula = Bacteria ~ geo_loc_name,
+                     family = 'binomial')
+tidy(country_mod)
 
 # Modelling the specific location on microbial abundance # NO SIG DIFS
-#location_mod_df <- full %>% 
-#  select(Location, Microbe) %>% 
-#  mutate(Bacteria = case_when(Microbe == 'Bacteria' ~ TRUE,
-#                              TRUE ~ FALSE))
+location_mod_df <- full %>% 
+  select(Location, Microbe) %>% 
+  mutate(Bacteria = case_when(Microbe == 'Bacteria' ~ TRUE,
+                             TRUE ~ FALSE))
                                    
 
-#location_mod <- glm(data = location_mod_df,
-#                     formula = Bacteria ~ Location,
-#                     family = 'binomial')
-#tidy(location_mod) %>% filter(p.value < 0.05)
+location_mod <- glm(data = location_mod_df,
+                     formula = Bacteria ~ Location,
+                    family = 'binomial')
+tidy(location_mod)
 ```
+Microbe as a function of lat/lon
+```{r}
+# Modelling the latitude on microbial abundance #
+lat_mod_df <- full %>% 
+  select(Lat, Microbe) %>% 
+  mutate(Bacteria = case_when(Microbe == 'Bacteria' ~ TRUE,
+                              TRUE ~ FALSE))
+                                   
 
+lat_mod <- glm(data = lat_mod_df,
+                     formula = Bacteria ~ Lat,
+                     family = 'binomial')
+tidy(lat_mod) %>% filter(p.value < 0.05)
+
+# Modelling the longitude on microbial abundance #
+lon_mod_df <- full %>% 
+  select(Lon, Microbe) %>% 
+  mutate(Bacteria = case_when(Microbe == 'Bacteria' ~ TRUE,
+                              TRUE ~ FALSE))
+                                   
+
+lon_mod <- glm(data = lon_mod_df,
+                     formula = Bacteria ~ Lon,
+                     family = 'binomial')
+tidy(lon_mod) %>% filter(p.value < 0.05)
+
+```
+</p>
+
+</body>
+</html>
 
 
 
