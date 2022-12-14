@@ -47,6 +47,8 @@ div.white {background-color:#ffffff;}
 
 <style>
 h1 {color: black;
+    font-size: 250%}
+h2 {color: black;
     font-size: 200%}
 p  {color: black;
     font-size: 125%}
@@ -142,9 +144,9 @@ Mangroves are both a plant and an important ecosystem to many organisms, includi
 
 ___
 
-<h1>
+<h2>
 <b>*Input Data*</b>
-</h1>  
+</h2>  
 <p>
 The data used in this project was retrieved from this [github repository](https://github.com/gzahn/SE_Asia_Mangrove_Bacteria). The data was organized by joins and by using tidy conventions to make the following data frame which focuses on biological and geo-spatial attributes.
 </p>
@@ -206,9 +208,9 @@ full_glimpse %>% kable() %>%
 ```
 </div>
 
-<h1>
+<h2>
 <b>**Study Area**</b>
-</h1>  
+</h2>  
 <p>
 The mangrove samples were taken from areas in South-East Asia, specifically, the countries of Malaysia and Singapore.
 </p>
@@ -315,9 +317,9 @@ ___
 <h1>
 <b>Analyses</b>
 </h1>  
-<h1>
+<h2>
 <b>*Exploring the Data*</b>
-</h1>
+</h2>
 
 <p>
 To begin, I want to see if I can find any trends in the data. I'll start by comparing the abundance of bacteria to fungi in the samples based on three predicting variables.  
@@ -677,14 +679,23 @@ Final_CAP <- CAP2 +
 knitr::include_graphics('./media/Abundance_graphs.jpg')
 knitr::include_graphics('./media/Abundance2.jpg')
 ```
-<h1>
+
+___  
+
+<h2>
 <b>*Creating Models*</b>
-</h1>
+</h2>
 <p>
-From these plots, it appears that the microbial abundance is affected by all three predicting variables. However, using a general linearized model for each predictor, we can see that there is a significant difference when looking at host differences (~+1% chance of microbe being a bacteria in *Sonneratia alba* than in *Avicennia alba*). We can also see significant differences of the microbial community when looking at the structure of the plant from where the sample came from. Leaf and sediment samples have a slightly higher chance of containing more bacteria than fruit samples while Pneumatophore samples have a smaller chance of containing bacteria than fruit samples. No significant differences were found when comparing countries or specific locations. However, significant results were shown for latitude and longitude changes. As the location of the sampling moved south, there was a higher chance of the sample being a bacterial sample as well as when the site of sampling was further east.
+From these plots, it appears that the microbial abundance is affected by all three predicting variables. However, using a general linearized model for each predictor, we can see that there is a significant difference when looking at host differences (~+1% chance of microbe being a bacteria in *Sonneratia alba* than in *Avicennia alba*). We can also see significant differences of the microbial community when looking at the structure of the plant from where the sample came from. The microbe found in Leaf and sediment samples have a slightly higher chance of being a bacteria than fruit samples while Pneumatophore samples have a smaller chance of being bacteria than fruit samples. No significant differences were found when comparing countries or specific locations. However, significant results were shown for latitude and longitude changes. As the location of the sampling moved south and east, there was a higher chance of the microbes in the sample being a bacteria.
 </p>
 
-<p style="text-align:center;">Microbe as a function of mangrove Species
+<style>
+div.center {text-align:center;}
+</style>
+
+div.center
+
+<p>Microbe as a function of mangrove Species</p>
 ```{r}
 # Modelling the species of Mangrove on microbial abundance #
 species_mod_df <- full %>% 
@@ -697,7 +708,7 @@ species_mod <- glm(data = species_mod_df,
                    family = 'binomial')
 tidy(species_mod)
 ```
-Microbe as a function of plant structure
+<p>Microbe as a function of plant structure</p>
 ```{r}
 # Modelling the structure of the sample on microbial abundance #
 structure_mod_df <- full %>% 
@@ -711,7 +722,7 @@ structure_mod <- glm(data = structure_mod_df,
                      family = 'binomial')
 tidy(structure_mod)
 ```
-Microbe as a function of Location and Country
+<p>Microbe as a function of Location and Country</p>
 ```{r}
 #Modelling the country of sampling on microbial abundance #NO SIG DIFS
 country_mod_df <- full %>% 
@@ -735,7 +746,7 @@ location_mod <- glm(data = location_mod_df,
                     family = 'binomial')
 tidy(location_mod)
 ```
-Microbe as a function of lat/lon
+<p>Microbe as a function of lat/lon</p>
 ```{r}
 # Modelling the latitude on microbial abundance #
 lat_mod_df <- full %>% 
@@ -762,7 +773,155 @@ lon_mod <- glm(data = lon_mod_df,
 tidy(lon_mod) %>% filter(p.value < 0.05)
 
 ```
+
+<br>
+
+<h2>
+<b>*Looking deeper into Phlya*</b>
+<h2>
+
+```{r}
+# Only showing the code for the Species abundance plot! #
+# The other two are very similar #
+
+### Comparing Species Microbial Abundances ###
+# Finding the count of all reads for bacteria
+phylum_count <- full %>% 
+  select(Phylum, Host, Count) %>% 
+  group_by(Host, Phylum) %>% 
+  summarize(Total = sum(Count),
+            Phylum = Phylum) %>%  unique.data.frame()
+
+# Finding the total count
+Total_phylum_count <- full %>% 
+  group_by(Host) %>%
+  summarize(Phylum = Phylum,
+            OVR_Total = sum(Count)) %>%  
+  unique()
+
+# Joining the overall counts with the bacteria and fungi counts
+full_phylum<- full_join(phylum_count, Total_phylum_count)
+
+# Creating a column for abundance
+full_phylum <- full_phylum %>%
+  mutate(Abundance = Total/OVR_Total)
+
+# Plotting the data
+Phylum_abundance_plot <- full_phylum %>% 
+  ggplot(aes(fill=Phylum, y=Abundance, x=Host)) + 
+  geom_bar(position="fill", stat="identity")
+# Making the plot pretty
+Final_phylum <- Phylum_abundance_plot +
+  labs(y = 'Relative Abundance', title = 'Phlya by Host Species') +
+  theme(panel.grid.major = element_blank(),
+        panel.background = element_rect(fill = 'white'),
+        plot.background = element_rect(fill = '#d7bea8', color = '#d7bea8'),
+        plot.title = element_text(size = 14, face = "bold"),
+        axis.title.y = element_text(size = 15, color = 'black', face = "bold.italic"),
+        axis.title.x = element_blank(),
+        axis.text.y = element_text(size = 13, color = 'black'),
+        axis.text.x = element_text(size = 12, color = 'black', face = "italic")) +
+  scale_y_continuous(expand = c(0, 0)) + # Removes extra space between axes and bars
+  scale_fill_viridis_d()
+```
+
+```{r, echo=FALSE}
+### Comparing Plant Structure Microbial Abundances ###
+phylum_count2 <- full %>% 
+  select(Phylum, Structure, Count) %>% 
+  group_by(Structure, Phylum) %>% 
+  summarize(Total = sum(Count),
+            Phylum = Phylum) %>%  unique.data.frame()
+
+# Finding the total count
+Total_phylum_count2 <- full %>% 
+  group_by(Structure) %>%
+  summarize(Phylum = Phylum,
+            OVR_Total = sum(Count)) %>%  
+  unique()
+
+full_phylum2 <- full_join(phylum_count2, Total_phylum_count2)
+
+
+full_phylum2 <- full_phylum2 %>% 
+  mutate(Abundance = Total/OVR_Total)
+
+Phylum_abundance_plot2 <- full_phylum2 %>% 
+  ggplot(aes(fill = Phylum, y = Abundance, x = Structure)) + 
+  geom_bar(position = "fill", stat = "identity")
+
+Final_phylum2 <- Phylum_abundance_plot2 +
+  labs(title = 'Phya by Structure') +
+  theme(panel.grid.major = element_blank(),
+        plot.title = element_text(size = 14, face = "bold"),
+        axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.text.x = element_text(size = 12, color = 'black', face = "italic"),
+        plot.background = element_rect(fill = '#d7bea8', color = '#d7bea8'),
+        panel.background = element_rect(fill = 'white')) +
+  scale_y_continuous(expand = c(0, 0)) + # Removes extra space between axes and bars
+  scale_fill_viridis_d()
+
+
+### Comparing Location Microbial Abundances ###
+phylum_count3 <- full %>% 
+  select(Phylum, Location, Count) %>% 
+  group_by(Location, Phylum) %>% 
+  summarize(Total = sum(Count),
+            Phylum = Phylum) %>%  unique.data.frame()
+
+Total_phylum_count3 <- full %>% 
+  group_by(Location) %>%
+  summarize(Phylum = Phylum,
+            OVR_Total = sum(Count)) %>%  
+  unique()
+
+
+full_phylum3 <- full_join(phylum_count3, Total_phylum_count3)
+
+full_phylum3 <- full_phylum3 %>% 
+  mutate(Abundance = Total/OVR_Total)
+
+Phylum_abundance_plot3 <- full_phylum3 %>% 
+  ggplot(aes(fill = Phylum, y = Abundance, x = Location)) + 
+  geom_bar(position = "fill", stat = "identity")
+
+Final_phylum3 <- Phylum_abundance_plot3 +
+  labs(title = 'Phyla by Location') +
+  theme(panel.grid.major = element_blank(),
+        axis.title.y = element_blank(),
+        plot.title = element_text(size = 14, face = "bold"),
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(size = 13, color = 'black', angle = 90, 
+                                   hjust = 0.95, face = "italic"),
+        plot.background = element_rect(fill = '#d7bea8', color = '#d7bea8'),
+        panel.background = element_rect(fill = 'white')) +
+  scale_y_continuous(expand = c(0, 0)) + # Removes extra space between axes and bars
+  scale_fill_viridis_d()
+```
+```{r, echo=FALSE}
+Final_phylum
+Final_phylum2
+Final_phylum3
+```
+
+<br>
+
+___
+
+
+
+<h1>
+<b>Preliminary Conclusions/Future Work </b>
+</h1>
+
+<p>
+Microbial communities appear to differ depending on the host species, the structure of from which the sample was taken from as well as the location the sample was taken from. In the future, I hope to improve this project by utilizing phyloseq in an more efficient way and to create better models.
 </p>
+
+**THE END (for now)**
 
 </body>
 </html>
