@@ -93,7 +93,7 @@ li a:hover {
 <ul>
   <li><a href="http://JLEON123.github.io">Homepage</a></li>
   <li><a href="http://JLEON123.github.io/portfolio/">Data Analytics</a></li>
-  <li><a href="http://JLEON123.github.io/Research/">Research</a></li>
+  <li><a href="http://JLEON123.github.io/Research/index.html">Research</a></li>
   <li><a href="http://JLEON123.github.io">Conferences</a></li>
   <li><a href="http://JLEON123.github.io">Publications</a></li>
   <li><a href="http://JLEON123.github.io">CV</a></li>
