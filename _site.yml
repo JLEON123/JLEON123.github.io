@@ -8,7 +8,7 @@ navbar:
     - text: "Undergraduate Research"
       menu:
         - text: "NSF S-STEM Project"
-          href: about.html
+          href: S_STEM_Project.html
           
 output: distill::distill_article
 theme: theme.css
