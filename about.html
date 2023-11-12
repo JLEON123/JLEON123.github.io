@@ -2265,6 +2265,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-weight: 300;
   }
 
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  d-article h2 {
+      font-weight: 600;
+      font-size: 20px!important;
+      line-height: 1.25em;
+      margin: 2rem 0 1.5rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 1rem;
+  }
+
   .distill-site-header .logo img{
     max-height: 40px; /* Makes logo bigger, default was 20px */
   }
@@ -2298,7 +2315,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
-  </style>
+
+  a.affiliation::after {
+      content: "\a" "Utah Valley University";
+      white-space: pre;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+      margin-block-start: 0.5em;
+      display: block;
+  }</style>
   <style type="text/css">
   /* base style */
 
@@ -2485,9 +2511,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="index.html" class="title">Josh Leon</a>
 </div>
 <div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="Research.html">Research</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Undergraduate Research
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="about.html">NSF S-STEM Project</a>
+</div>
+</div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>

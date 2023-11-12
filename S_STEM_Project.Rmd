@@ -18,11 +18,36 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # **Abstract**  
 
-The burning of fossil fuels has caused the Earth’s temperature to rise by roughly 1 degree Celsius compared to pre-industrial temperatures (IPCC, 2018; Lindsey & Dahlman, 2023). Consequently, droughts in the Southwestern United States are expected to increase in intensity and length (Cook et al., 2015). These disturbances will likely favor invasive plant species over native plant species (Turbelin & Catford, 2021). The goal of this research is to improve our understanding of the response patterns exhibited by plant communities and their associated microbes under projected climate change conditions to prepare and formulate strategies that effectively bolster the resilience of the ecosystem. In 2021, we conducted stress trials on plants collected in the field to determine the abiotic factors that significantly affect plant health. The following year we once again collected plant and soil samples in the field but with the goal of characterizing the bacterial community associated with different parts of the plants. We extracted and sequenced the DNA and performed a variety of analyses in Rstudio to characterize the bacterial community. Our next steps are to inoculate another round of plants in stress trials with bacterial species associated with plants that survived the original stress trials to determine if they are a significant part of plant survival under project climate change stressors.
+Anthropogenic climate change or climate change caused by humans primarily through the burning of fossil fuels has caused the Earth’s temperature to rise by roughly 1 degree Celsius compared to pre-industrial temperatures (IPCC, 2018; Lindsey & Dahlman, 2023).  How this affects organisms like plants depends on the region of interest. The region of interest for this study is the Southwestern United States where drought events, driven by arid conditions and high temperatures, are expected to increase in intensity and length (Cook et al., 2015). Understanding the response patterns exhibited by plant communities in this region is imperative in formulating strategies to effectively bolster the resilience of the ecosystem under these conditions. All plants will be affected by climate change, but the ecosystem's disturbances will likely favor invasive plant species over native plant species (Turbelin & Catford, 2021). For this study, I used the African mustard (Strigosella africana), an extremely invasive plant in this region. I am interested in the plant's microbiome (the entirety of the microbes associated with the plant) and its response patterns to the projected changes in the climate. I hypothesized that plants that withstand the simulated climate change trials will exhibit a bacterial community structure similar to that of other surviving plants, yet distinguishable from the naturally occurring microbiome.
 
 # **Presentations**  
 
+## Utah Conference for Undergraduate Research (UCUR) 2022  
 
+```{r, include=TRUE, fig.align="center", out.width="100%", out.height="100%", echo=FALSE}
+knitr::include_graphics("./presentations/UCUR2022.pdf")
+```
+
+## Botanical Society of America's 2023 Conference & NSF S-STEM 2023 Conference
+
+```{r, include=TRUE, fig.align="center", out.width="100%", out.height="100%", echo=FALSE}
+knitr::include_graphics("./presentations/JL_Final_Draft_Botany2.pdf")
+```
+ <br> 
+ 
+# **Methods** 
+<p>
+<img src="./media/CARE photos/Me_sampling.JPEG" alt="Me Sampling" style="float:right; width:1.8in; height:4in; padding:0.15in;">
+I collected plant samples, seeds, and soil in Capitol Reef National Park (CARE). With these samples, I grew replicates of the African Mustard in the UVU greenhouses for use in later experiments. I also extracted, quantified and sequenced the DNA from the plant and soil samples.
+</p>
+
+To determine the impact of abiotic factors, specifically temperature, precipitation, and fertilizer, I conducted 6-week trials using growth chambers. The trials were designed using a randomized block design with a sample size of 48 plants that were cultivated from collected seeds. Half of the plants (n = 24) were placed into one growth chamber that mimicked 2021 temperatures for the CARE region. The remaining plants (n = 24) were placed into a growth chamber that simulated projected 2100 temperatures for the region using the C6-C7 scenario from the Intergovernmental Panel on Climate Change’s (IPCC) 6th annual report which predicts a temperature increase of 3 degrees Celsius (IPCC, 2022).
+
+# **Results**  
+
+## Abiotic Impacts
+
+## Community Composition  
 
 
 
