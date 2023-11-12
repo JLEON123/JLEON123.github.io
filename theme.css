@@ -121,3 +121,12 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(4px);
 }
 
+a.affiliation::after {
+    content: "\a" "Utah Valley University";
+    white-space: pre;
+}
+
+d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+    display: block;
+}
