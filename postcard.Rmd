@@ -1,0 +1,28 @@
+---
+title: "Josh Leon"
+image: "./media/small_headshot.png"
+links:
+  - label: '`r fontawesome::fa("envelope", height = "25px", fill = "#000000")`'
+    url: "mailto:leonjoshr@gmail.com"
+  - label: CV
+    url: "./CV1.pdf"
+  - label: '`r fontawesome::fa(name = "linkedin",height="25px",fill = "#0077b5" )`'
+    url: "https://www.linkedin.com/in/jleon123/"
+  - label: '`r fontawesome::fa(name = "github",height="25px",fill = "#171515" )`'
+    url: "https://github.com/JLEON123"
+  - label: '`r fontawesome::fa(name = "twitter",height="25px",fill = "#1da1f2" )`'
+    url: "https://twitter.com/joshleonydd"
+output:
+  postcards::trestles
+---
+## Bio
+
+<p class="paragraph1">
+I am an undergraduate student at Utah Valley University studying <a style="font-size:100%;"href="https://www.uvu.edu/catalog/current/departments/biology/bioinformatics-bs/" target = "_blank">Bioinformatics</a> while also obtaining a certificate in <a style="font-size:100%;" href="https://www.uvu.edu/catalog/current/departments/earth-science/geographic-information-systems-certificate-of-proficiency/" target = "_blank">Geographic Information Systems (GIS)</a>. I was granted the <a style="font-size:100%;"href="https://www.uvu.edu/biology/s_stem_scholarship.html" target = "_blank">NSF S-STEM scholarship</a> my second year at UVU, allowing me to have a strong focus on research that interests me as an undergraduate. Currently, I am working on three research projects and was apart of one that is undergoing peer-review. My research interests deal with plant-microbe interactions, microbial biogeography and utilizing GIS/remote sensing techniques for ecology related questions. My hope is to continue my education after UVU and earn a PhD in a biology related field. </p>
+
+## Education
+
+**Utah Valley University** | Orem, UT
+
+B.S. Bioinformatics | August 2019 - December 2023  
+Certificate of Proficiency: Geographic Information Systems | August 2021 - December 2023 
