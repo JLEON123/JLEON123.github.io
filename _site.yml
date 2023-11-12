@@ -1,0 +1,23 @@
+name: "https://jleon123.github.io/"
+title: "JOSH LEON"
+description: |
+  Josh Leon
+output_dir: "."
+theme: theme.css
+navbar:
+  left:
+    - icon: fa-regular fa-envelope
+      href: "mailto:leonjoshr@gmail.com"
+  right:
+    - text: "Research"
+      menu:
+        - text: "About"
+          href: about.html
+        - text: "Undergraduate"
+          href: Research.html
+        - text: "Graduate School"
+          href: Grad_school.html
+
+
+output: distill::distill_article
+
