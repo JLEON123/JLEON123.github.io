@@ -2,7 +2,7 @@ name: "."
 title: "Josh Leon"
 description: |
   Josh Leon
-output_dir: "docs"
+output_dir: "."
 navbar:
   right:
     - text: "Home"
@@ -12,3 +12,4 @@ navbar:
     - text: "Research"
       href: Research.html
 output: distill::distill_article
+theme: theme.css
