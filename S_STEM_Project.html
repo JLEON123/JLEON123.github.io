@@ -2286,6 +2286,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       padding-bottom: 1rem;
   }
 
+  h3 {
+    font-size: 18px;
+  }
+
+  d-article h3 {
+      font-weight: 600;
+      font-size: 18px!important;
+      line-height: 1.25em;
+      margin: 2rem 0 1.5rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 1rem;
+  }
+
   .distill-site-header .logo img{
     max-height: 40px; /* Makes logo bigger, default was 20px */
   }
@@ -2485,6 +2498,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }</style>
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2595,7 +2610,88 @@ Undergraduate Research
 <p><img src="graphs/FINAL_MOSIAC_SSTEM.png" width="100%" height="100%" style="display: block; margin: auto;" /></p>
 </div>
 <h2 id="community-composition">Community Composition</h2>
-<p>When analyzing the DNA data, I modified scripts found <a style="font-size:100%;"href="https://github.com/gzahn/Microbiome_Workshop" target = "_blank">here</a> and created new scripts for additional information.</p>
+<p>When analyzing the DNA data, I modified scripts found <a style="font-size:100%;"href="https://github.com/gzahn/Microbiome_Workshop" target = "_blank">here</a> and created new scripts for additional information. All of my data and additional scripts can be found <a style="font-size:100%; "href="https://github.com/JLEON123/Strigosella_Research" target = "_blank">here</a>. All data was analyzed in R version 4.1.1.</p>
+<h3 id="script-00_remove_primers.r"><em>Script: 00_Remove_Primers.R</em></h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class=" lightable-classic lightable-hover" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Program
+</th>
+<th style="text-align:left;">
+Version
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+dada2
+</td>
+<td style="text-align:left;">
+1.20.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+decontam
+</td>
+<td style="text-align:left;">
+1.12.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+phyloseq
+</td>
+<td style="text-align:left;">
+1.36.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+purrr
+</td>
+<td style="text-align:left;">
+0.3.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Biostrings
+</td>
+<td style="text-align:left;">
+2.60.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+patchwork
+</td>
+<td style="text-align:left;">
+1.1.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ShortRead
+</td>
+<td style="text-align:left;">
+1.50.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cutadapt
+</td>
+<td style="text-align:left;">
+4.2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
