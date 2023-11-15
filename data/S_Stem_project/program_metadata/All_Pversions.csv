@@ -1,0 +1,16 @@
+﻿Package,Version
+tidyverse,1.3.2
+dada2,1.20.0
+decontam,1.12.0
+phyloseq,1.36.0
+purrr,0.3.5
+Biostrings,2.60.2
+patchwork,1.1.2
+ShortRead,1.50.0
+DECIPHER,2.20.0
+vegan,2.6.4
+phanghorn,2.10.0
+msa,1.24.0
+ape,5.6.2
+seqinr,4.2.16
+corncob,0.3.0
