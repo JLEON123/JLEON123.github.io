@@ -15,24 +15,25 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(kableExtra)
+library(tidyverse)
 ```
 
 # **Abstract**  
 
-Anthropogenic climate change or climate change caused by humans primarily through the burning of fossil fuels has caused the Earth’s temperature to rise by roughly 1 degree Celsius compared to pre-industrial temperatures (IPCC, 2018; Lindsey & Dahlman, 2023).  How this affects organisms like plants depends on the region of interest. The region of interest for this study is the Southwestern United States where drought events, driven by arid conditions and high temperatures, are expected to increase in intensity and length (Cook et al., 2015). Understanding the response patterns exhibited by plant communities in this region is imperative in formulating strategies to effectively bolster the resilience of the ecosystem under these conditions. All plants will be affected by climate change, but the ecosystem's disturbances will likely favor invasive plant species over native plant species (Turbelin & Catford, 2021). For this study, I used the African mustard (Strigosella africana), an extremely invasive plant in this region. I am interested in the plant's microbiome (the entirety of the microbes associated with the plant) and its response patterns to the projected changes in the climate. I hypothesized that plants that withstand the simulated climate change trials will exhibit a bacterial community structure similar to that of other surviving plants, yet distinguishable from the naturally occurring microbiome.
+Anthropogenic climate change has caused the Earth’s temperature to rise by roughly 1 degree Celsius compared to pre-industrial temperatures (IPCC, 2018; Lindsey & Dahlman, 2023).  How this affects organisms like plants depends on the region of interest. The region of interest for this study is the Southwestern United States where drought events, driven by arid conditions and high temperatures, are expected to increase in intensity and length (Cook et al., 2015). Understanding the response patterns exhibited by plant communities in this region is imperative in formulating strategies to effectively bolster the resilience of the ecosystem under these conditions. All plants will be affected by climate change, but the ecosystem's disturbances will likely favor invasive plant species over native plant species (Turbelin & Catford, 2021). For this study, I used the African mustard (Strigosella africana), an extremely invasive plant in this region. I am interested in the plant's microbiome (the entirety of the microbes associated with the plant) and its response patterns to the projected changes in the climate. I hypothesized that plants that withstand the simulated climate change trials will exhibit a bacterial community structure similar to that of other surviving plants, yet distinguishable from the naturally occurring microbiome.
 
 # **Presentations**  
 
 ## Utah Conference for Undergraduate Research (UCUR) 2022  
 
 ```{r, include=TRUE, fig.align="center", out.width="100%", out.height="100%", echo=FALSE}
-knitr::include_graphics("./presentations/UCUR_2022.png")
+knitr::include_graphics("./presentations/S_Stem_project/UCUR_2022.png")
 ```
 
 ## Botanical Society of America's 2023 Conference & NSF S-STEM 2023 Conference
 
 ```{r, include=TRUE, fig.align="center", out.width="100%", out.height="100%", echo=FALSE}
-knitr::include_graphics("./presentations/JL_Final_Draft_Botany.png")
+knitr::include_graphics("./presentations/S_Stem_project/JL_Final_Draft_Botany.png")
 ```
  <br> 
  
@@ -52,8 +53,9 @@ knitr::include_graphics("./presentations/JL_Final_Draft_Botany.png")
 
 As expected, increased temperatures and decreased precipitation lowered plant health and survival rates. Fertilizer did not significantly affect plant health.
 
-```{r, include=TRUE, fig.align="center", out.width="100%", out.height="100%", echo=FALSE}
-knitr::include_graphics("./graphs/FINAL_MOSIAC_SSTEM.png")
+```{r, include=TRUE}
+ggplot(data = "./data/S_Stem_project/Abiotic_stress_results.csv")+ geom_mosaic(aes(x = product(Alive, Heat)), fill=c("#000000", "#275d38", "#000000", "#275d38")) + labs(x = "Heat", y = "Alive")+
+theme_minimal
 ```
 
 ## Community Composition  
@@ -63,7 +65,7 @@ When analyzing the DNA data, I modified scripts found <a style="font-size:100%;"
 ### *Script: 00_Remove_Primers.R*
 
 ```{r, programtable}
-df <- read.csv("data/00_versions.csv")
+df <- read.csv("./data/S_Stem_project/program_metadata/00_versions.csv")
 
 df %>% 
   kable() %>% 
