@@ -2608,38 +2608,38 @@ Undergraduate Research
 <p>As expected, increased temperatures and decreased precipitation lowered plant health and survival rates. Fertilizer did not significantly affect plant health.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="S_STEM_Project_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
-<pre><code>
-    Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
-
-data:  Status and Temperature
-X-squared = 14.083, df = 1, p-value = 0.0001749</code></pre>
-<pre><code>
-    Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
-
-data:  Status and Precipitation
-X-squared = 6.75, df = 1, p-value = 0.009375</code></pre>
-<pre><code>
-    Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
-
-data:  Status and Fertilzer
-X-squared = 0.083333, df = 1, p-value = 0.7728</code></pre>
+<pre><code>                              Chi-squared      p-value df
+Plant Outcome &amp; Temperature   14.08333333 0.0001748866  1
+Plant Outcome &amp; Precipitation  6.75000000 0.0093747685  1
+Plant Outcome &amp; Fertilizer     0.08333333 0.7728299927  1</code></pre>
 </div>
 <h2 id="community-composition">Community Composition</h2>
 <p>When analyzing the DNA data, I modified scripts found <a style="font-size:100%;"href="https://github.com/gzahn/Microbiome_Workshop" target = "_blank">here</a> and created new scripts for additional information. All of my data and additional scripts can be found <a style="font-size:100%; "href="https://github.com/JLEON123/Strigosella_Research" target = "_blank">here</a>. All data was analyzed in R version 4.1.1.</p>
-<h3 id="script-00_remove_primers.r"><em>Script: 00_Remove_Primers.R</em></h3>
+<p style="text-align:center;">
+<strong>Package Versions</strong>
+</p>
 <div class="layout-chunk" data-layout="l-body">
-<table class=" lightable-classic lightable-hover" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:3in; ">
+<table class="table lightable-classic-2 lightable-striped lightable-hover" style="font-size: 35px; margin-left: auto; margin-right: auto; font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;">
-Program
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Package
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Version
 </th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left;">
+tidyverse
+</td>
+<td style="text-align:left;">
+1.3.2
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 dada2
@@ -2698,16 +2698,66 @@ ShortRead
 </tr>
 <tr>
 <td style="text-align:left;">
-cutadapt
+DECIPHER
 </td>
 <td style="text-align:left;">
-4.2
+2.20.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegan
+</td>
+<td style="text-align:left;">
+2.6.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+phanghorn
+</td>
+<td style="text-align:left;">
+2.10.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+msa
+</td>
+<td style="text-align:left;">
+1.24.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ape
+</td>
+<td style="text-align:left;">
+5.6.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+seqinr
+</td>
+<td style="text-align:left;">
+4.2.16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+corncob
+</td>
+<td style="text-align:left;">
+0.3.0
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+</div>
+<h3 id="scripts-00_remove_primers.r-01_process_raw_16s_reads.r"><em>Scripts: 00_Remove_Primers.R &amp; 01_Process_Raw_16S_Reads.R</em></h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
