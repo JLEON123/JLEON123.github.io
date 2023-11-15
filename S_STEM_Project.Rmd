@@ -26,13 +26,13 @@ Anthropogenic climate change or climate change caused by humans primarily throug
 ## Utah Conference for Undergraduate Research (UCUR) 2022  
 
 ```{r, include=TRUE, fig.align="center", out.width="100%", out.height="100%", echo=FALSE}
-knitr::include_graphics("./presentations/UCUR2022.pdf")
+knitr::include_graphics("./presentations/UCUR_2022.png")
 ```
 
 ## Botanical Society of America's 2023 Conference & NSF S-STEM 2023 Conference
 
 ```{r, include=TRUE, fig.align="center", out.width="100%", out.height="100%", echo=FALSE}
-knitr::include_graphics("./presentations/JL_Final_Draft_Botany2.pdf")
+knitr::include_graphics("./presentations/JL_Final_Draft_Botany.png")
 ```
  <br> 
  
