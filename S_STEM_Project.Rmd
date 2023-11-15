@@ -16,6 +16,8 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 library(kableExtra)
 library(tidyverse)
+library(ggmosaic)
+library(patchwork)
 ```
 
 # **Abstract**  
@@ -54,8 +56,82 @@ knitr::include_graphics("./presentations/S_Stem_project/JL_Final_Draft_Botany.pn
 As expected, increased temperatures and decreased precipitation lowered plant health and survival rates. Fertilizer did not significantly affect plant health.
 
 ```{r, include=TRUE}
-ggplot(data = "./data/S_Stem_project/Abiotic_stress_results.csv")+ geom_mosaic(aes(x = product(Alive, Heat)), fill=c("#000000", "#275d38", "#000000", "#275d38")) + labs(x = "Heat", y = "Alive")+
-theme_minimal
+# Load in data
+Abiotic_results <- read_csv("./data/S_Stem_project/Abiotic_stress_data.csv")
+
+# Factor to allow for chiSquared
+Abiotic_results$Precipitation <- 
+  factor(Abiotic_results$Precipitation, levels = c("Normal", "Decreased"))
+
+Abiotic_results$Temperature <- factor(Abiotic_results$Temperature)
+Abiotic_results$Status <- factor(Abiotic_results$Status)
+Abiotic_results$Fertilzer <- factor(Abiotic_results$Fertilzer)
+
+# Show temperature difference and its affect on plant health
+Temp_Mosiac <- 
+  Abiotic_results %>%
+  ggplot() +
+  geom_mosaic(aes(x = product(Status, Temperature)),
+              fill=c("#275d38", "#000000", "#275d38", "#000000")) +
+  theme_minimal() +
+  theme(
+    axis.title.x = element_text(face = "bold", size = 20),
+    axis.title.y = element_blank(),
+    axis.text = element_text(face = "bold.italic", size = 12),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank() 
+  )
+
+# Show precipitation difference and its affect on plant health
+
+Precip_Mosiac <- 
+  Abiotic_results %>%
+  ggplot() +
+  geom_mosaic(aes(x = product(Status, Precipitation)),
+              fill=c("#275d38", "#000000", "#275d38", "#000000")) +
+  theme_minimal() +
+  theme(
+    axis.title.x = element_text(face = "bold", size = 20),
+    axis.text.x = element_text(face = "bold.italic", size = 12),
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank() 
+  )
+
+# Fertilizer had no affect
+Fert_Mosiac <- 
+  Abiotic_results %>%
+  ggplot() +
+  geom_mosaic(aes(x = product(Status, Fertilzer)),
+              fill=c("#275d38", "#000000", "#275d38", "#000000")) +
+  theme_minimal() +
+  theme(
+    axis.title.x = element_text(face = "bold", size = 20),
+    axis.text.x = element_text(face = "bold.italic", size = 12),
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank() 
+  )
+
+Temp_Mosiac + Precip_Mosiac + Fert_Mosiac
+
+attach(Abiotic_results)
+PrecipChi <- chisq.test(Status, Precipitation)
+TempChi <- chisq.test(Status, Temperature)
+FertChi <- chisq.test(Status, Fertilzer)
+detach(Abiotic_results)
+
+TempChi
+PrecipChi
+FertChi
 ```
 
 ## Community Composition  
@@ -65,9 +141,9 @@ When analyzing the DNA data, I modified scripts found <a style="font-size:100%;"
 ### *Script: 00_Remove_Primers.R*
 
 ```{r, programtable}
-df <- read.csv("./data/S_Stem_project/program_metadata/00_versions.csv")
+versions00 <- read.csv("./data/S_Stem_project/program_metadata/00_versions.csv")
 
-df %>% 
+versions00 %>% 
   kable() %>% 
   kable_classic(lightable_options = "hover")
 ```
